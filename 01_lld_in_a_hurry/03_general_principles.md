@@ -2,6 +2,13 @@
 
 Source: Hello Interview LLD → In a Hurry → Design Principles (part 1 of 2). Learned 10 Nov 2026. Next: [04_solid.md](04_solid.md).
 
+## What this note covers
+
+- KISS, DRY and YAGNI: what each says, and when each stops applying
+- Separation of Concerns, with the TicTacToe split
+- Law of Demeter, and why fluent chains don't break it
+- The tensions between the principles and how to state the trade-off in an interview
+
 ## Review points
 
 - Two groups: **general** (this note) and **object-oriented** (SOLID; OOD gets more interview attention). The three general ones to remember: KISS, DRY, YAGNI.

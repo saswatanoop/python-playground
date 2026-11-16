@@ -2,6 +2,13 @@
 
 Source: Hello Interview LLD → In a Hurry → Design Principles (part 2 of 2). Learned 10 Nov 2026. Previous: [03_general_principles.md](03_general_principles.md).
 
+## What this note covers
+
+- The five SOLID principles, each with a bad and a good version
+- When *not* to apply OCP and DIP
+- How an LSP violation differs from an ISP violation
+- Why over-applying SOLID breaks KISS
+
 ## Review points
 
 - **SRP:** one reason to change. **OCP:** extend by adding, not editing. **LSP:** a child keeps every parent promise; it can add, never remove. **ISP:** small interfaces; no stub methods. **DIP:** business logic owns the interface, and implementations conform to it (through injection).

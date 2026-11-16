@@ -4,6 +4,13 @@ Source: Hello Interview LLD → In a Hurry → OOP Concepts (part 2 of 2). Learn
 
 Snippets assume `from abc import ABC, abstractmethod`. `SpotSize` is an `Enum`, and `ParkingLot._find_spot(size)` returns a free spot of that size or `None`.
 
+## What this note covers
+
+- Polymorphism in place of type checks, and what it costs
+- ABC vs `Protocol`
+- Inheritance vs composition: the reuse-or-replace test
+- Requirement cues for all four OOP concepts
+
 ## Review points
 
 - **Polymorphism:** one call, each object runs its own version, no branching on type. It replaces `if/elif` on a type. In Python it needs no parent class (duck typing, `Protocol`). Cost: harder to trace, so keep `if/elif` for a few stable types.

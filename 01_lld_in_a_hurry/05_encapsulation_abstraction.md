@@ -2,6 +2,13 @@
 
 Source: Hello Interview LLD → In a Hurry → OOP Concepts (part 1 of 2). Learned 16 Nov 2026. Next: [06_polymorphism_inheritance.md](06_polymorphism_inheritance.md).
 
+## What this note covers
+
+- Encapsulation as operations, not getters and setters
+- What `_x`, `__x` and `@property` really enforce in Python
+- Abstraction: where an interface belongs and how to pitch its level
+- Encapsulation vs abstraction vs DIP
+
 ## Review points
 
 - **Encapsulation = expose operations, not fields with guards.** A validated setter protects a *value*; domain methods (`deposit`, `withdraw`) protect the *rules*: why state changed and how it stays consistent with the rest of the object.

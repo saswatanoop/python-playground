@@ -17,7 +17,7 @@ Go through the folders in number order, and the files inside each folder in numb
 
 ## Note format
 
-- **Theory** (`.md` in `01_lld_in_a_hurry/`): starts with a `Review points` block and ends with review questions whose answers are collapsed. Written from my teach-back, in my words.
+- **Theory** (`.md` in `01_lld_in_a_hurry/`): starts with a `What this note covers` list, then a `Review points` block, and ends with review questions whose answers are collapsed. Written from my teach-back, in my words.
 - **Keep each note short.** A long Hello Interview page is split into parts of about 150–300 lines, each with its own review points and questions.
 - **Code** (`.py`): a docstring at the top with `Review points`, then the smallest example that shows the idea.
 - **LLD problems** (`04_lld_problems/<nn>_<name>/`): `README.md` with requirements → class diagram → patterns used → extensions → review points, plus the code and a short test.
@@ -37,7 +37,10 @@ Same as the learning order. ⬜ = not written yet.
 | 5 | ✔ [05_encapsulation_abstraction.md](01_lld_in_a_hurry/05_encapsulation_abstraction.md) | OOP Concepts, part 1 | — |
 | 6 | ✔ [06_polymorphism_inheritance.md](01_lld_in_a_hurry/06_polymorphism_inheritance.md) | OOP Concepts, part 2 | — |
 | 7 | ✔ [07_python_oop_toolkit.md](01_lld_in_a_hurry/07_python_oop_toolkit.md) | — (my older Python notes, merged) | — |
-| 8 | ⬜ `01_lld_in_a_hurry/08_design_patterns.md` | Design Patterns | [02_design_patterns/](02_design_patterns/) |
+| 8 | ✔ [08_python_objects_and_containers.md](01_lld_in_a_hurry/08_python_objects_and_containers.md) | — (drafted by Claude; teach back pending) | — |
+| 9 | ⬜ `01_lld_in_a_hurry/09_design_patterns.md` | Design Patterns | [02_design_patterns/](02_design_patterns/) |
+
+Goal of this folder: after it, I have every OOP concept and Python language tool I need to write LLD code.
 
 ### 2. Design patterns (code)
 
