@@ -19,7 +19,7 @@ Same as the learning order. ⬜ = not written yet.
 | 1 | ⬜ `lld_in_a_hurry/01_introduction.md` | — |
 | 2 | ⬜ `lld_in_a_hurry/02_delivery_framework.md` | — |
 | 3 | ✔ [lld_in_a_hurry/03_design_principles.md](lld_in_a_hurry/03_design_principles.md) | [SOLID/solid_in_python.py](SOLID/solid_in_python.py) |
-| 4 | ⬜ `lld_in_a_hurry/04_oop_concepts.md` | [oop_concepts.py](oop_concepts.py), [class_and_access_modifiers.py](class_and_access_modifiers.py), [types_enums_dataclass.py](types_enums_dataclass.py) |
+| 4 | ✔ [lld_in_a_hurry/04_oop_concepts.md](lld_in_a_hurry/04_oop_concepts.md) | [oop_concepts.py](oop_concepts.py), [class_and_access_modifiers.py](class_and_access_modifiers.py), [types_enums_dataclass.py](types_enums_dataclass.py) |
 | 5 | ⬜ `lld_in_a_hurry/05_design_patterns.md` | [design_patterns/](design_patterns/) |
 
 ### 2. Design patterns (code)
