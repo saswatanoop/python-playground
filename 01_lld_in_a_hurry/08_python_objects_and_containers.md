@@ -28,7 +28,8 @@ from dataclasses import dataclass
 
 class Pos:
     def __init__(self, row: int, col: int):
-        self.row, self.col = row, col
+        self.row = row
+        self.col = col
 
 Pos(1, 2) == Pos(1, 2)             # False: default == compares identity
 
@@ -46,10 +47,12 @@ The same thing by hand, when a dataclass doesn't fit:
 ```python
 class Cell:
     def __init__(self, row: int, col: int):
-        self._row, self._col = row, col
+        self._row = row
+        self._col = col
 
     def __eq__(self, other: object) -> bool:
-        if not isinstance(other, Cell): return NotImplemented
+        if not isinstance(other, Cell):
+            return NotImplemented
         return (self._row, self._col) == (other._row, other._col)
 
     def __hash__(self) -> int:
@@ -108,8 +111,9 @@ class Lot:
             raise InvalidTicketError(ticket_id)        # broken rule: must not pass silently
         return self._tickets.pop(ticket_id)
 
+lot = Lot()
 try:
-    Lot().exit("T-9")
+    lot.exit("T-9")
 except ParkingError as e:                              # every domain error, nothing else
     message = str(e)                                   # "unknown ticket T-9"
 ```
@@ -144,7 +148,8 @@ class LRUCache:
         self._data: OrderedDict[str, int] = OrderedDict()
 
     def get(self, key: str) -> int | None:
-        if key not in self._data: return None
+        if key not in self._data:
+            return None
         self._data.move_to_end(key)          # now the most recently used
         return self._data[key]
 
@@ -155,7 +160,10 @@ class LRUCache:
             self._data.popitem(last=False)   # evict the least recently used
 
 cache = LRUCache(2)
-cache.put("a", 1); cache.put("b", 2); cache.get("a"); cache.put("c", 3)
+cache.put("a", 1)
+cache.put("b", 2)
+cache.get("a")
+cache.put("c", 3)
 cache.get("b")                               # None: "b" was evicted, "a" survived
 ```
 
@@ -169,8 +177,10 @@ from typing import Callable
 
 PricingRule = Callable[[int], float]             # hours -> fee
 
-def flat(hours: int) -> float: return hours * 20.0
-def capped(hours: int) -> float: return min(hours * 20.0, 100.0)
+def flat(hours: int) -> float:
+    return hours * 20.0
+def capped(hours: int) -> float:
+    return min(hours * 20.0, 100.0)
 
 class Checkout:
     def __init__(self, pricing: PricingRule):
@@ -179,9 +189,14 @@ class Checkout:
     def fee(self, hours: int) -> float:
         return self._pricing(hours)
 
-Checkout(flat).fee(8)               # 160.0
-Checkout(capped).fee(8)             # 100.0
-Checkout(lambda h: 0.0).fee(8)      # 0.0: a free day, no new class
+checkout = Checkout(flat)           # pass the function itself: no parentheses
+checkout.fee(8)                     # 160.0
+
+checkout = Checkout(capped)
+checkout.fee(8)                     # 100.0
+
+checkout = Checkout(lambda h: 0.0)  # a free day, no new class
+checkout.fee(8)                     # 0.0
 ```
 
 - **Function:** the strategy is one stateless operation.

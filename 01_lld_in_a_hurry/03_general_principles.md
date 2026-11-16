@@ -53,18 +53,22 @@ def is_valid_email(email: str) -> bool:
 
 class User:
     def __init__(self, email: str):
-        if not is_valid_email(email): raise ValueError("bad email")
+        if not is_valid_email(email):
+            raise ValueError("bad email")
         self.email = email
 
 class Newsletter:
     def subscribe(self, email: str):
-        if not is_valid_email(email): raise ValueError("bad email")
+        if not is_valid_email(email):
+            raise ValueError("bad email")
 
 # NOT DRY-worthy: looks alike, means different things. Keep separate.
 class ParkingTicket:
-    def fee(self) -> float: return self.hours * self.hourly_rate     # may add peak pricing
+    def fee(self) -> float:
+        return self.hours * self.hourly_rate     # may add peak pricing
 class LibraryLoan:
-    def fine(self) -> float: return self.days_late * self.fine_per_day  # may add a cap
+    def fine(self) -> float:
+        return self.days_late * self.fine_per_day  # may add a cap
 ```
 - **DRY vs KISS:** sometimes duplicating is simpler than adding an abstraction. A line to use in an interview: *"I'll keep this in `User` for now. If it shows up 3–4 times, I'll pull it into a shared validator."*
 
@@ -107,16 +111,20 @@ class ParkingLot:
 class TicTacToe:
     def play(self):
         while True:
-            for row in self.board: print(row)          # display
+            for row in self.board:
+                print(row)          # display
             r, c = int(input()), int(input())          # input
             self.board[r][c] = "X"
             if self.board[0][0] == self.board[1][1] == self.board[2][2]:  # rules
-                print("Winner!"); break
+                print("Winner!")
+                break
 
 # Good: each concern in its own class, the game just coordinates
 class TicTacToe:
     def __init__(self, board: Board, display: Display, input_handler: InputHandler):
-        self.board, self.display, self.input_handler = board, display, input_handler
+        self.board = board
+        self.display = display
+        self.input_handler = input_handler
 
     def play(self):
         while not self.board.is_game_over():           # win OR full board (draw)

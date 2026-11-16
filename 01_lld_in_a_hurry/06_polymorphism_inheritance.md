@@ -40,14 +40,17 @@ class Vehicle(ABC):
     def required_spot_size(self) -> SpotSize: ...
 
 class Car(Vehicle):
-    def required_spot_size(self) -> SpotSize: return SpotSize.REGULAR
+    def required_spot_size(self) -> SpotSize:
+        return SpotSize.REGULAR
 class Truck(Vehicle):
-    def required_spot_size(self) -> SpotSize: return SpotSize.LARGE
+    def required_spot_size(self) -> SpotSize:
+        return SpotSize.LARGE
 
 class ParkingLot:
     def park(self, vehicle: Vehicle) -> bool:
         spot = self._find_spot(vehicle.required_spot_size())   # no type check
-        if spot is None: return False
+        if spot is None:
+            return False
         spot.occupy(vehicle)
         return True
 # New vehicle type = new class. ParkingLot is untouched (OCP).
@@ -75,7 +78,8 @@ class Car:
     def __init__(self, drivetrains: list[Drivetrain]):
         self._drivetrains = drivetrains
     def start(self) -> None:
-        for d in self._drivetrains: d.start()
+        for d in self._drivetrains:
+            d.start()
 
 hybrid = Car([GasEngine(), ElectricMotor()])   # no new class needed
 # Hydrogen car = new Drivetrain implementation. Car is untouched.

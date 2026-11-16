@@ -9,7 +9,7 @@ Go through the folders in number order, and the files inside each folder in numb
 | # | Folder | What's in it |
 |---|---|---|
 | 1 | [01_lld_in_a_hurry/](01_lld_in_a_hurry/) | Theory notes: design principles, OOP concepts, Python mechanics |
-| 2 | [02_design_patterns/](02_design_patterns/) | Overview note, then one code file per pattern: creational → structural → behavioural |
+| 2 | [02_design_patterns/](02_design_patterns/) | Overview note, then one note per pattern: creational → structural → behavioural |
 | 3 | [03_concurrency/](03_concurrency/) | Concurrency topics, one file each |
 | 4 | `04_lld_problems/` | Solved LLD problems (created with the first problem) |
 
@@ -17,9 +17,10 @@ Go through the folders in number order, and the files inside each folder in numb
 
 ## Note format
 
-- **Theory** (`.md` in `01_lld_in_a_hurry/`): starts with a `What this note covers` list, then a `Review points` block, and ends with review questions whose answers are collapsed. Written from my teach-back, in my words.
+- **Notes** (`.md`): starts with a `What this note covers` list, then a `Review points` block, and ends with review questions whose answers are collapsed. Written from my teach-back, in my words.
 - **Keep each note short.** A long Hello Interview page is split into parts of about 150–300 lines, each with its own review points and questions.
-- **Code** (`.py`): a docstring at the top with `Review points`, then the smallest example that shows the idea.
+- **Design patterns:** one note per pattern, `<nn>_<name>.md`, with the code inside it as short snippets that run. No separate `.py`. Older patterns are still `.py` files with a long docstring; each is replaced by an `.md` when I study that pattern.
+- **Other code** (`.py`): a docstring at the top with `Review points`, then the smallest example that shows the idea.
 - **LLD problems** (`04_lld_problems/<nn>_<name>/`): `README.md` with requirements → class diagram → patterns used → extensions → review points, plus the code and a short test.
 
 ## Review order
@@ -41,13 +42,13 @@ Same as the learning order. ⬜ = not written yet.
 
 Goal of this folder: after it, I have every OOP concept and Python language tool I need to write LLD code.
 
-### 2. Design patterns (code)
+### 2. Design patterns
 
-Start with ⬜ `02_design_patterns/00_overview.md`, the note for the Hello Interview Design Patterns page (which patterns matter and when to use one). Then the code files below. They were written before the Hello Interview pass; each gets tightened when I study that pattern and teach it back.
+Start with ⬜ `02_design_patterns/00_overview.md`, the note for the Hello Interview Design Patterns page (which patterns matter and when to use one). Then the patterns below. The code files were written before the Hello Interview pass; when I study a pattern and teach it back, it becomes one `.md` note and the `.py` is deleted. ✔ = note written.
 
 | # | Group | Done | To add |
 |---|---|---|---|
-| 1 | Creational | [singleton](02_design_patterns/01_creational/01_singleton.py), [factory](02_design_patterns/01_creational/02_factory.py), [builder](02_design_patterns/01_creational/03_builder.py) | — |
+| 1 | Creational | [singleton](02_design_patterns/01_creational/01_singleton.py), ✔ [factory](02_design_patterns/01_creational/02_factory.md), [builder](02_design_patterns/01_creational/03_builder.py) | — |
 | 2 | Structural | [adapter](02_design_patterns/02_structural/01_adapter.py), [decorator](02_design_patterns/02_structural/02_decorator.py), [facade](02_design_patterns/02_structural/03_facade.py), [composite](02_design_patterns/02_structural/04_composite.py) | — |
 | 3 | Behavioural | [strategy](02_design_patterns/03_behavioural/01_strategy.py), [observer](02_design_patterns/03_behavioural/02_observer.py), [state](02_design_patterns/03_behavioural/03_state.py), [command](02_design_patterns/03_behavioural/04_command.py) | chain of responsibility |
 

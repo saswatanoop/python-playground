@@ -30,7 +30,8 @@ Source: my older notes (`oop_concepts.py`, `class_and_access_modifiers.py`, `typ
 ```python
 class Ticket:
     def __init__(self, plate: str, hours: int):
-        self.plate, self.hours = plate, hours
+        self.plate = plate
+        self.hours = hours
 
     @classmethod
     def from_string(cls, raw: str) -> "Ticket":   # alternate constructor
@@ -90,7 +91,8 @@ class BankAccount:
         self.owner = owner
         self._balance = 0.0
     def deposit(self, amount: float) -> None:
-        if amount <= 0: raise ValueError("amount must be positive")
+        if amount <= 0:
+            raise ValueError("amount must be positive")
         self._balance += amount
     @property
     def balance(self) -> float:
@@ -104,7 +106,8 @@ class SavingsAccount(BankAccount):
         self.deposit(self.balance * self.interest_rate)    # reuses the parent's rules
 
 acc = SavingsAccount("alice", 0.05)
-acc.deposit(1000); acc.add_interest()
+acc.deposit(1000)
+acc.add_interest()
 acc.balance                                         # 1050.0
 ```
 
@@ -115,15 +118,19 @@ acc.balance                                         # 1050.0
 
 ```python
 class A:
-    def process(self): return "A"
+    def process(self):
+        return "A"
 class B(A):
-    def process(self): return "B>" + super().process()
+    def process(self):
+        return "B>" + super().process()
 class C(A):
-    def process(self): return "C>" + super().process()
+    def process(self):
+        return "C>" + super().process()
 class D(B, C): ...
 
 [k.__name__ for k in D.mro()]   # ['D', 'B', 'C', 'A', 'object']
-D().process()                   # 'B>C>A': inside B, super() is C, not A
+d = D()
+d.process()                     # 'B>C>A': inside B, super() is C, not A
 ```
 
 - Order: the class itself, then its bases left to right, each class once, and a parent only after all of its children.
@@ -160,7 +167,8 @@ class Vehicle(ABC):
 
 class Car(Vehicle):
     @property
-    def size(self) -> SpotSize: return SpotSize.REGULAR
+    def size(self) -> SpotSize:
+        return SpotSize.REGULAR
 
 class Bike(Vehicle): ...
 
@@ -182,7 +190,8 @@ class Money:                       # value object: immutable, equal by value, ha
     currency: str = "INR"
 
     def __post_init__(self):
-        if self.amount < 0: raise ValueError("negative amount")
+        if self.amount < 0:
+            raise ValueError("negative amount")
 
 @dataclass
 class Order:

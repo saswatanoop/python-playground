@@ -160,8 +160,10 @@ class Worker(ABC):
 
 class Robot(Worker):
     def work(self): ...
-    def eat(self): pass      # smell
-    def sleep(self): pass    # smell
+    def eat(self):
+        pass      # smell
+    def sleep(self):
+        pass    # smell
 
 # Good: small interfaces, implement only what applies
 class Workable(Protocol):
@@ -180,10 +182,12 @@ class Robot:                 # fits Workable only, no fake methods
 
 # Who uses the interfaces: each caller asks only for what it needs
 def run_shift(workers: list[Workable]) -> None:
-    for w in workers: w.work()
+    for w in workers:
+        w.work()
 
 def serve_lunch(eaters: list[Feedable]) -> None:
-    for e in eaters: e.eat()
+    for e in eaters:
+        e.eat()
 
 run_shift([Human(), Robot()])   # both fit
 serve_lunch([Human()])          # serve_lunch([Robot()]): mypy/IDE flags it; at runtime it crashes on .eat()
@@ -221,15 +225,21 @@ class NotificationService:
         self.sender.send(message)
 
 # Who picks the implementation: whoever creates the service (app startup / tests)
-NotificationService(EmailSender()).notify("Order shipped")
-NotificationService(SmsSender()).notify("Order shipped")   # swap, service unchanged
+service = NotificationService(EmailSender())               # the sender is chosen here
+service.notify("Order shipped")
+
+service = NotificationService(SmsSender())                 # swap, service unchanged
+service.notify("Order shipped")
 
 class FakeSender(MessageSender):                           # test double
-    def __init__(self): self.sent: list[str] = []
-    def send(self, message: str) -> None: self.sent.append(message)
+    def __init__(self):
+        self.sent: list[str] = []
+    def send(self, message: str) -> None:
+        self.sent.append(message)
 
 fake = FakeSender()
-NotificationService(fake).notify("hi")
+service = NotificationService(fake)
+service.notify("hi")
 assert fake.sent == ["hi"]                                 # no real email sent
 ```
 - **DIP vs dependency injection:**

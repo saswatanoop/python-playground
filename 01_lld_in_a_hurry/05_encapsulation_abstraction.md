@@ -39,13 +39,16 @@ class Account:
         self._history: list[tuple[str, float]] = []
 
     def deposit(self, amount: float) -> None:
-        if amount <= 0: raise ValueError("amount must be positive")
+        if amount <= 0:
+            raise ValueError("amount must be positive")
         self._balance += amount
         self._history.append(("deposit", amount))   # intent recorded, history stays in sync
 
     def withdraw(self, amount: float) -> None:
-        if amount <= 0: raise ValueError("amount must be positive")
-        if amount > self._balance: raise ValueError("insufficient funds")
+        if amount <= 0:
+            raise ValueError("amount must be positive")
+        if amount > self._balance:
+            raise ValueError("insufficient funds")
         self._balance -= amount
         self._history.append(("withdraw", amount))
 
