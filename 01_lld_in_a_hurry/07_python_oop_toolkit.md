@@ -103,7 +103,7 @@ class SavingsAccount(BankAccount):
     def add_interest(self) -> None:
         self.deposit(self.balance * self.interest_rate)    # reuses the parent's rules
 
-acc = SavingsAccount("anoop", 0.05)
+acc = SavingsAccount("alice", 0.05)
 acc.deposit(1000); acc.add_interest()
 acc.balance                                         # 1050.0
 ```

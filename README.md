@@ -9,7 +9,7 @@ Go through the folders in number order, and the files inside each folder in numb
 | # | Folder | What's in it |
 |---|---|---|
 | 1 | [01_lld_in_a_hurry/](01_lld_in_a_hurry/) | Theory notes: design principles, OOP concepts, Python mechanics |
-| 2 | [02_design_patterns/](02_design_patterns/) | One code file per pattern: creational → structural → behavioural |
+| 2 | [02_design_patterns/](02_design_patterns/) | Overview note, then one code file per pattern: creational → structural → behavioural |
 | 3 | [03_concurrency/](03_concurrency/) | Concurrency topics, one file each |
 | 4 | `04_lld_problems/` | Solved LLD problems (created with the first problem) |
 
@@ -30,21 +30,20 @@ Same as the learning order. ⬜ = not written yet.
 
 | # | Note | Hello Interview page | Code |
 |---|---|---|---|
-| 1 | ⬜ `01_lld_in_a_hurry/01_introduction.md` | Introduction | — |
-| 2 | ⬜ `01_lld_in_a_hurry/02_delivery_framework.md` | Delivery Framework | — |
+| 1 | ✔ [01_introduction.md](01_lld_in_a_hurry/01_introduction.md) | Introduction | — |
+| 2 | ✔ [02_delivery_framework.md](01_lld_in_a_hurry/02_delivery_framework.md) | Delivery Framework | — |
 | 3 | ✔ [03_general_principles.md](01_lld_in_a_hurry/03_general_principles.md) | Design Principles, part 1 | — |
 | 4 | ✔ [04_solid.md](01_lld_in_a_hurry/04_solid.md) | Design Principles, part 2 | [04_solid_example.py](01_lld_in_a_hurry/04_solid_example.py) |
 | 5 | ✔ [05_encapsulation_abstraction.md](01_lld_in_a_hurry/05_encapsulation_abstraction.md) | OOP Concepts, part 1 | — |
 | 6 | ✔ [06_polymorphism_inheritance.md](01_lld_in_a_hurry/06_polymorphism_inheritance.md) | OOP Concepts, part 2 | — |
 | 7 | ✔ [07_python_oop_toolkit.md](01_lld_in_a_hurry/07_python_oop_toolkit.md) | — (my older Python notes, merged) | — |
 | 8 | ✔ [08_python_objects_and_containers.md](01_lld_in_a_hurry/08_python_objects_and_containers.md) | — (drafted by Claude; teach back pending) | — |
-| 9 | ⬜ `01_lld_in_a_hurry/09_design_patterns.md` | Design Patterns | [02_design_patterns/](02_design_patterns/) |
 
 Goal of this folder: after it, I have every OOP concept and Python language tool I need to write LLD code.
 
 ### 2. Design patterns (code)
 
-Written before the Hello Interview pass. Each file gets tightened when I study that pattern and teach it back.
+Start with ⬜ `02_design_patterns/00_overview.md`, the note for the Hello Interview Design Patterns page (which patterns matter and when to use one). Then the code files below. They were written before the Hello Interview pass; each gets tightened when I study that pattern and teach it back.
 
 | # | Group | Done | To add |
 |---|---|---|---|
