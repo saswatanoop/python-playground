@@ -19,6 +19,7 @@ Go through the folders in number order, and the files inside each folder in numb
 
 - **Notes** (`.md`): starts with a `What this note covers` list, then a `Review points` block, and ends with review questions whose answers are collapsed. Written from my teach-back, in my words.
 - **Keep each note short.** A long Hello Interview page is split into parts of about 150–300 lines, each with its own review points and questions.
+- **Design pattern notes are written as a discussion:** question-led sections, the questions a learner or interviewer would ask next, ending with a `Gotchas` list. The notes in `01_lld_in_a_hurry/` stay in the reference style (crux bullets under topic headings).
 - **Design patterns:** one note per pattern, `<nn>_<name>.md`, with the code inside it as short snippets that run. No separate `.py`. Older patterns are still `.py` files with a long docstring; each is replaced by an `.md` when I study that pattern.
 - **Other code** (`.py`): a docstring at the top with `Review points`, then the smallest example that shows the idea.
 - **LLD problems** (`04_lld_problems/<nn>_<name>/`): `README.md` with requirements → class diagram → patterns used → extensions → review points, plus the code and a short test.

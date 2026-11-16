@@ -54,7 +54,8 @@ class Config:
     timeout = 10
     tags: list[str] = []      # mutable class attribute: one list for everyone
 
-a, b = Config(), Config()
+a = Config()
+b = Config()
 a.timeout = 500               # new instance attribute on a; Config.timeout is still 10
 Config.timeout = 999          # b.timeout -> 999, a.timeout -> 500 (shadowed)
 a.tags.append("x")            # b.tags -> ["x"]

@@ -5,7 +5,7 @@ Source: Hello Interview LLD → Design Patterns, and my teach-back on 17 Nov 202
 ## What this note covers
 
 - What a factory decides, and when it earns its place
-- The gotchas interviewers poke at
+- The pushbacks an interviewer makes, and what to say back
 - The registry trick for the open/closed challenge
 
 ## Review points
@@ -14,11 +14,17 @@ Source: Hello Interview LLD → Design Patterns, and my teach-back on 17 Nov 202
 - **Payoff:** a new type is one new class plus one change in the factory. No caller changes.
 - **Add one only when** the same creation decision is made in several places, or the type arrives as runtime data. Otherwise construct the object once and inject it.
 - **The honest pitch:** a factory doesn't delete the `if/elif`, it gives it one home.
-- Factories are polarizing. Hello Interview's advice: if you add one, check your interviewer for a grimace.
+- **Open/closed pushback:** concede that the factory is edited, point out nothing else is, and offer a registry.
 
 ---
 
-### The whole pattern
+## The discussion
+
+### "I need to send a notification. Why can't I just write `SmsNotification()`?"
+
+You can. If one place creates it, do exactly that and close this note.
+
+The trouble starts when the type arrives as data and more than one place has to deal with it:
 
 ```python
 from abc import ABC, abstractmethod
@@ -36,37 +42,85 @@ class SmsNotification(Notification):
     def send(self, to: str, message: str) -> str:
         return f"sms to {to}: {message}"
 
-def create_notification(kind: str) -> Notification:      # the if/elif lives here, once
+def send_alert(kind: str, to: str, message: str) -> str:
+    if kind == "email":
+        notification = EmailNotification()
+    elif kind == "sms":
+        notification = SmsNotification()
+    else:
+        raise ValueError(f"unknown notification type: {kind}")
+    return notification.send(to, message)
+
+# send_report() and send_invoice() repeat the same six lines
+```
+
+Then someone asks for push notifications, and you go hunting for every copy of that `if/elif`. Miss one and you find out in production.
+
+### "So what does a factory do about it?"
+
+It gives that decision one home. That's the entire pattern.
+
+```python
+def create_notification(kind: str) -> Notification:
     if kind == "email":
         return EmailNotification()
     if kind == "sms":
         return SmsNotification()
     raise ValueError(f"unknown notification type: {kind}")
 
-class AlertService:
-    def __init__(self, create: Callable[[str], Notification]):   # the factory is injected
-        self._create = create
+def send_alert(kind: str, to: str, message: str) -> str:
+    notification = create_notification(kind)
+    return notification.send(to, message)
 
-    def alert(self, kind: str, to: str, message: str) -> str:
-        return self._create(kind).send(to, message)              # kind arrives as data
-
-service = AlertService(create_notification)     # pass the function itself: no parentheses
-service.alert("sms", "alice", "disk full")      # "sms to alice: disk full"
+send_alert("sms", "alice", "disk full")     # "sms to alice: disk full"
 ```
 
-In Python a factory can be a plain function. No `NotificationFactory` class is needed until it has state.
+Push arrives: one new class, one new branch in `create_notification`. `send_alert`, `send_report` and `send_invoice` don't change. They no longer even know that `SmsNotification` exists.
 
-### Gotchas
+Notice it's a plain function. In Python you don't need a `NotificationFactory` class until the factory has state of its own.
 
-- **Counting types is the wrong test.** Three types created in one place: no factory. Two types created in five places: factory. Count creation sites, not classes.
-- **Injection and a factory are not rivals.** Injection covers a choice known when the app is wired (`OrderService(EmailNotification())`). A factory covers a choice that arrives per request as data. When you need both, inject the factory, as `AlertService` does.
-- **"It's still open/closed" is a trap.** The factory *is* edited for every new type. Say so, then add that it is the only thing edited and every caller stays closed.
-- **Unknown key:** raise. Returning `None` moves the crash to a confusing place later.
-- **A factory that just wraps one constructor** is ceremony. Delete it.
+### "Hold on. The `if/elif` is still there. What did I gain?"
 
-### Registry: when they push on open/closed
+Fair, and an interviewer will say exactly this. A factory doesn't delete the conditional. It moves it from *every* creation site to *one* place whose only job is creation. Say it that plainly; don't oversell it.
 
-Classes are objects in Python, so the `if/elif` becomes a dict and a new type becomes a registration.
+### "So whenever I have three or more types, I add a factory?"
+
+That was my first instinct, and it's the wrong test. Count **creation sites**, not classes:
+
+- Three types, created in one place: no factory. It would only be indirection.
+- Two types, created in five places: factory.
+
+The other trigger is the type arriving as **runtime data**: a string in a request, a value in a config file.
+
+Factories are polarizing. Hello Interview's advice: if you add one, check your interviewer for a grimace.
+
+### "Why not just inject the notification through the constructor?"
+
+Good default, and usually the right one. But the two aren't rivals; they answer different questions.
+
+- **The choice is known when the app is wired:** `OrderService(EmailNotification())`. Inject it. No factory.
+- **The choice arrives per request, as data:** something still has to turn `"sms"` into an object. That something is the factory, and you inject *the factory*.
+
+```python
+class AlertService:
+    def __init__(self, create: Callable[[str], Notification]):
+        self._create = create                     # the factory, injected
+
+    def alert(self, kind: str, to: str, message: str) -> str:
+        notification = self._create(kind)         # kind arrives as data
+        return notification.send(to, message)
+
+service = AlertService(create_notification)      # no parentheses: hand over the function itself
+service.alert("sms", "alice", "disk full")       # "sms to alice: disk full"
+```
+
+### Interviewer: "You edit the factory for every new type. That breaks open/closed."
+
+Don't answer "it's still closed for modification". I tried that; it isn't, and they know it.
+
+Concede, then narrow: yes, the factory is edited, and it is the *only* thing edited. Every caller stays closed.
+
+If they keep pushing, classes are objects in Python, so the `if/elif` can become a dict, and a new type becomes a registration:
 
 ```python
 class PushNotification(Notification):
@@ -86,12 +140,20 @@ class NotificationRegistry:
         return self._classes[kind]()
 
 registry = NotificationRegistry()
-registry.register("push", PushNotification)              # no factory code changed
-service = AlertService(registry.create)         # same AlertService, now given the registry's method
-service.alert("push", "alice", "disk full")     # "push to alice: disk full"
+registry.register("push", PushNotification)      # no factory code changed
+
+service = AlertService(registry.create)          # same AlertService, different factory
+service.alert("push", "alice", "disk full")      # "push to alice: disk full"
 ```
 
-Start with the plain `if/elif`. Reach for the registry only when asked, or when types are added often.
+`AlertService` didn't change between the two examples. It only ever asked for "something that takes a string and returns a `Notification`".
+
+### Gotchas
+
+- **Don't lead with the registry.** Start with the plain `if/elif`; bring the registry out only when asked, or when types are added often.
+- **Unknown key: raise.** Returning `None` moves the crash somewhere confusing.
+- **A factory around a single constructor** is ceremony. Delete it.
+- **A factory picks the class, nothing more.** Once it starts validating, logging and sending, it has become a service.
 
 ### Connections
 
@@ -135,7 +197,7 @@ Answer first, then open the answer to check.
 
    <details><summary>Answer</summary>
 
-   - Agree that it is edited, and that it is the only thing edited: callers stay closed.
+   - Concede that it is edited, and that it is the only thing edited: callers stay closed.
    - To avoid it: a registry, `dict[str, type[Notification]]`, with `register(kind, klass)`. `create` never changes.
 
    </details>

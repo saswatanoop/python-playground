@@ -11,7 +11,8 @@ Rules for this folder:
 - Keep each note short (about 150–300 lines). Split a long source page into parts, each with its own review points and review questions.
 - Review questions test judgment, not recall, and each answer sits in a collapsed `<details><summary>Answer</summary>` block under its question.
 - Notes must be concise and accurate. A correct, meaningful example beats copying the source's example.
-- Give each note a `Gotchas` section (traps, wrong instincts, interviewer pushbacks) and keep the tone lively. Leave out variants nobody uses any more (for example the Gang of Four Factory Method), even as recognize-only.
+- In `02_design_patterns/` only, write the body of a note as a discussion that teaches: each section heading is the question a curious learner or an interviewer would ask next ("Hold on, the if/elif is still there. What did I gain?"), answered in a conversational voice, building from the pain to the pattern to the pushbacks. Use my own wrong instincts from the teach-back as the questions. Model: `02_design_patterns/01_creational/02_factory.md`. The `Review points` block on top stays terse. Notes in `01_lld_in_a_hurry/` keep the reference style; don't convert them.
+- Give each design pattern note a `Gotchas` section (traps, wrong instincts, interviewer pushbacks) and keep the tone lively. Leave out variants nobody uses any more (for example the Gang of Four Factory Method), even as recognize-only.
 - Every snippet must be defined, used and consistent with the text. Run it before claiming an output.
 - Write snippets as plain, readable Python: one statement per line. No `Service(dep).method()` chains (build the object on one line, call it on the next), no `;`, no `if x: return y` or `def f(): return y` on one line, no `self.a, self.b = a, b`. `def f(): ...` stubs are fine.
 - When a saved source page exists in `html_pages/`, check the note against it for accuracy and missing points.
