@@ -29,7 +29,7 @@ Source: Hello Interview LLD → In a Hurry → Design Principles (part 2 of 2). 
 
 ---
 
-Code: [04_solid_example.py](04_solid_example.py), a notification service that uses all five. Composition over inheritance is in [06_polymorphism_inheritance.md](06_polymorphism_inheritance.md).
+Composition over inheritance is in [06_polymorphism_inheritance.md](06_polymorphism_inheritance.md).
 
 **Caveat from the article:** SOLID comes from Java/C#-style deep inheritance and interface-heavy design. Overusing it breaks KISS. Use a principle when the problem needs it, and refer to it briefly when explaining a trade-off. Never recite the list. SOLID manages change and coupling; KISS and YAGNI cap how much abstraction you add. Interviewers look for that balance.
 

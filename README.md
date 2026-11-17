@@ -8,7 +8,7 @@ Go through the folders in number order, and the files inside each folder in numb
 
 | # | Folder | What's in it |
 |---|---|---|
-| 1 | [01_lld_in_a_hurry/](01_lld_in_a_hurry/) | Theory notes: design principles, OOP concepts, Python mechanics |
+| 1 | [01_lld_in_a_hurry/](01_lld_in_a_hurry/) | Notes: design principles, OOP concepts, Python mechanics |
 | 2 | [02_design_patterns/](02_design_patterns/) | Overview note, then one note per pattern: creational → structural → behavioural |
 | 3 | [03_concurrency/](03_concurrency/) | Concurrency topics, one file each |
 | 4 | `04_lld_problems/` | Solved LLD problems (created with the first problem) |
@@ -35,7 +35,7 @@ Same as the learning order. ⬜ = not written yet.
 | 1 | ✔ [01_introduction.md](01_lld_in_a_hurry/01_introduction.md) | Introduction | — |
 | 2 | ✔ [02_delivery_framework.md](01_lld_in_a_hurry/02_delivery_framework.md) | Delivery Framework | — |
 | 3 | ✔ [03_general_principles.md](01_lld_in_a_hurry/03_general_principles.md) | Design Principles, part 1 | — |
-| 4 | ✔ [04_solid.md](01_lld_in_a_hurry/04_solid.md) | Design Principles, part 2 | [04_solid_example.py](01_lld_in_a_hurry/04_solid_example.py) |
+| 4 | ✔ [04_solid.md](01_lld_in_a_hurry/04_solid.md) | Design Principles, part 2 | — |
 | 5 | ✔ [05_encapsulation_abstraction.md](01_lld_in_a_hurry/05_encapsulation_abstraction.md) | OOP Concepts, part 1 | — |
 | 6 | ✔ [06_polymorphism_inheritance.md](01_lld_in_a_hurry/06_polymorphism_inheritance.md) | OOP Concepts, part 2 | — |
 | 7 | ✔ [07_python_oop_toolkit.md](01_lld_in_a_hurry/07_python_oop_toolkit.md) | — (my older Python notes, merged) | — |
