@@ -204,6 +204,7 @@ Money(5) == Money(5)               # True
 
 - Use a dataclass for data holders (value objects, DTOs). An entity with rules and invariants is a normal class that exposes operations.
 - `order=True` adds `<` and `>`, comparing fields in order.
+- Required and optional fields, `kw_only`, `field(...)` options and `replace()` are in [09_parameters_and_dataclass_fields.md](09_parameters_and_dataclass_fields.md).
 
 ---
 

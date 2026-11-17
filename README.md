@@ -40,6 +40,7 @@ Same as the learning order. ⬜ = not written yet.
 | 6 | ✔ [06_polymorphism_inheritance.md](01_lld_in_a_hurry/06_polymorphism_inheritance.md) | OOP Concepts, part 2 | — |
 | 7 | ✔ [07_python_oop_toolkit.md](01_lld_in_a_hurry/07_python_oop_toolkit.md) | — (my older Python notes, merged) | — |
 | 8 | ✔ [08_python_objects_and_containers.md](01_lld_in_a_hurry/08_python_objects_and_containers.md) | — (drafted by Claude; teach back pending) | — |
+| 9 | ✔ [09_parameters_and_dataclass_fields.md](01_lld_in_a_hurry/09_parameters_and_dataclass_fields.md) | — (drafted by Claude; teach back pending) | — |
 
 Goal of this folder: after it, I have every OOP concept and Python language tool I need to write LLD code.
 
@@ -49,7 +50,7 @@ Start with ⬜ `02_design_patterns/00_overview.md`, the note for the Hello Inter
 
 | # | Group | Done | To add |
 |---|---|---|---|
-| 1 | Creational | [singleton](02_design_patterns/01_creational/01_singleton.py), ✔ [factory](02_design_patterns/01_creational/02_factory.md), [builder](02_design_patterns/01_creational/03_builder.py) | — |
+| 1 | Creational | [singleton](02_design_patterns/01_creational/01_singleton.py), ✔ [factory](02_design_patterns/01_creational/02_factory.md), ✔ [builder](02_design_patterns/01_creational/03_builder.md) | — |
 | 2 | Structural | [adapter](02_design_patterns/02_structural/01_adapter.py), [decorator](02_design_patterns/02_structural/02_decorator.py), [facade](02_design_patterns/02_structural/03_facade.py), [composite](02_design_patterns/02_structural/04_composite.py) | — |
 | 3 | Behavioural | [strategy](02_design_patterns/03_behavioural/01_strategy.py), [observer](02_design_patterns/03_behavioural/02_observer.py), [state](02_design_patterns/03_behavioural/03_state.py), [command](02_design_patterns/03_behavioural/04_command.py) | chain of responsibility |
 
