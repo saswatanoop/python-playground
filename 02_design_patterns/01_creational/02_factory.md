@@ -158,7 +158,7 @@ service.alert("push", "alice", "disk full")      # "push to alice: disk full"
 ### Connections
 
 - Builds on polymorphism and DIP: the factory is what lets callers hold only the abstraction.
-- Factory vs Strategy: to fill in when I do Strategy.
+- Factory vs Strategy: Factory decides *which class to create*, once. Strategy decides *which behaviour an existing object uses*, and can swap it. They often work together: the factory creates the strategy ([01_strategy.md](../03_behavioural/01_strategy.md)).
 
 ---
 
