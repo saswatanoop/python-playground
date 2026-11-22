@@ -22,7 +22,7 @@ Go through the folders in number order, and the files inside each folder in numb
 - **Design pattern notes are written as a discussion:** question-led sections, the questions a learner or interviewer would ask next, ending with a `Gotchas` list. The notes in `01_lld_in_a_hurry/` stay in the reference style (crux bullets under topic headings).
 - **Design patterns:** one note per pattern, `<nn>_<name>.md`, with the code inside it as short snippets that run. No separate `.py`. Older patterns are still `.py` files with a long docstring; each is replaced by an `.md` when I study that pattern.
 - **Other code** (`.py`): a docstring at the top with `Review points`, then the smallest example that shows the idea.
-- **LLD problems** (`04_lld_problems/<nn>_<name>/`): `README.md` with requirements → class diagram → patterns used → extensions → review points, plus the code and a short test.
+- **LLD problems** (`04_lld_problems/<nn>_<name>/`): `README.md` with requirements → class diagram → patterns used → extensions → review points, plus the code and a short test. Also record **v1 → what broke → v2** (my naive first design, the requirement that broke it, and the refactor) and **where I got stuck**, so the note can later be taught as a video (see "Make every note video-ready" in `../LEARNING.md`).
 
 ## Review order
 
@@ -52,7 +52,7 @@ Start with ⬜ `02_design_patterns/00_overview.md`, the note for the Hello Inter
 |---|---|---|---|
 | 1 | Creational | ✔ [singleton](02_design_patterns/01_creational/01_singleton.md), ✔ [factory](02_design_patterns/01_creational/02_factory.md), ✔ [builder](02_design_patterns/01_creational/03_builder.md) | — |
 | 2 | Structural | [adapter](02_design_patterns/02_structural/01_adapter.py), ✔ [decorator](02_design_patterns/02_structural/02_decorator.md), ✔ [facade](02_design_patterns/02_structural/03_facade.md), [composite](02_design_patterns/02_structural/04_composite.py) | — |
-| 3 | Behavioural | ✔ [strategy](02_design_patterns/03_behavioural/01_strategy.md), [observer](02_design_patterns/03_behavioural/02_observer.py), [state](02_design_patterns/03_behavioural/03_state.py), [command](02_design_patterns/03_behavioural/04_command.py) | chain of responsibility |
+| 3 | Behavioural | ✔ [strategy](02_design_patterns/03_behavioural/01_strategy.md), ✔ [observer](02_design_patterns/03_behavioural/02_observer.md), [state](02_design_patterns/03_behavioural/03_state.py), [command](02_design_patterns/03_behavioural/04_command.py) | chain of responsibility |
 
 Recognize-only, no code: proxy, template method, iterator, abstract factory.
 
