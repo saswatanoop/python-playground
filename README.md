@@ -46,7 +46,7 @@ Goal of this folder: after it, I have every OOP concept and Python language tool
 
 ### 2. Design patterns
 
-Start with ⬜ `02_design_patterns/00_overview.md`, the note for the Hello Interview Design Patterns page (which patterns matter and when to use one). Then the patterns below. The code files were written before the Hello Interview pass; when I study a pattern and teach it back, it becomes one `.md` note and the `.py` is deleted. ✔ = note written.
+Start with ✔ [00_overview.md](02_design_patterns/00_overview.md), the note for the Hello Interview Design Patterns page (which patterns matter and when to use one). Then the patterns below. The code files were written before the Hello Interview pass; when I study a pattern and teach it back, it becomes one `.md` note and the `.py` is deleted. ✔ = note written.
 
 | # | Group | Done | To add |
 |---|---|---|---|
