@@ -28,7 +28,7 @@ No. The Gang of Four book is from 1994, written for C++ and Smalltalk. Since the
 - languages absorbed some patterns: iterators are a built-in, not a pattern;
 - the move from deep inheritance to composition and functions made others obsolete.
 
-Hello Interview's count: you'll be asked about maybe five. The ones that matter are the eight in this folder's index, plus Adapter, Composite and Command from my older notes.
+Hello Interview's count: you'll be asked about maybe five. The eight on the page matter most; Adapter, Composite, Command and Chain of Responsibility are a second tier, worth knowing for pattern-name questions and a few LLD problems.
 
 ### "So should I use as many as I can, to show I know them?"
 
@@ -43,8 +43,8 @@ Each group answers a different question:
 | Group | The question | Hello Interview's wording | Patterns |
 |---|---|---|---|
 | **Creational** | *How* does an object get made, and which one? | "control how objects get created"; hide construction details, keep code from being tied to concrete classes | Factory, Builder, Singleton |
-| **Structural** | *How are objects wired together?* Who wraps or holds whom, and what interface the outside sees | "how objects connect to each other" | Decorator, Facade, (Adapter, Composite) |
-| **Behavioural** | *Who does the work, and how do objects talk?* Which algorithm runs, who hears about a change, what's allowed now | "how objects interact and distribute responsibilities"; "the flow of control" | Strategy, Observer, State, (Command, Chain of Responsibility) |
+| **Structural** | *How are objects wired together?* Who wraps or holds whom, and what interface the outside sees | "how objects connect to each other" | Decorator, Facade, Adapter, Composite |
+| **Behavioural** | *Who does the work, and how do objects talk?* Which algorithm runs, who hears about a change, what's allowed now | "how objects interact and distribute responsibilities"; "the flow of control" | Strategy, Observer, State, Command, Chain of Responsibility |
 
 ### "Structural and behavioural both use composition. How do I tell them apart?"
 
@@ -77,7 +77,15 @@ Little. Nobody asks "is Observer behavioural?". They ask "which pattern fits her
 | Observer | Several components react to one event | "notify", "update multiple components" | [02_observer.md](03_behavioural/02_observer.md) |
 | State machine | Behaviour depends on the current state, and transitions get messy | "state", "status", "stage" repeated; vending machine, workflow | [03_state.md](03_behavioural/03_state.md) |
 
-Adapter, Composite and Command aren't on the Hello Interview page; their notes come next. Recognize-only, no notes: proxy, template method, iterator, abstract factory.
+Not on the Hello Interview page, but worth knowing (especially for pattern-name questions in India):
+
+| Pattern | Use it when | Signal in the requirements | Note |
+|---|---|---|---|
+| Adapter | A class you can't change has the wrong interface | "integrate a third-party / legacy API" | [01_adapter.md](02_structural/01_adapter.md) |
+| Composite | Items and groups of items must be treated the same, in a tree | "folders inside folders", "nested", "total over the hierarchy" | [04_composite.md](02_structural/04_composite.md) |
+| Command | Actions must be stored, undone, queued or replayed | "undo/redo", "queue jobs", "macros" | [04_command.md](03_behavioural/04_command.md) |
+| Chain of responsibility | A request passes along handlers until handled, or through each | "escalate", "approval limits", "middleware", "dispense notes" | [05_chain_of_responsibility.md](03_behavioural/05_chain_of_responsibility.md) |
+ Recognize-only, no notes: proxy, template method, iterator, abstract factory.
 
 ### Gotchas
 

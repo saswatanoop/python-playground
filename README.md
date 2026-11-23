@@ -51,8 +51,8 @@ Start with ✔ [00_overview.md](02_design_patterns/00_overview.md), the note for
 | # | Group | Done | To add |
 |---|---|---|---|
 | 1 | Creational | ✔ [singleton](02_design_patterns/01_creational/01_singleton.md), ✔ [factory](02_design_patterns/01_creational/02_factory.md), ✔ [builder](02_design_patterns/01_creational/03_builder.md) | — |
-| 2 | Structural | [adapter](02_design_patterns/02_structural/01_adapter.py), ✔ [decorator](02_design_patterns/02_structural/02_decorator.md), ✔ [facade](02_design_patterns/02_structural/03_facade.md), [composite](02_design_patterns/02_structural/04_composite.py) | — |
-| 3 | Behavioural | ✔ [strategy](02_design_patterns/03_behavioural/01_strategy.md), ✔ [observer](02_design_patterns/03_behavioural/02_observer.md), ✔ [state](02_design_patterns/03_behavioural/03_state.md), [command](02_design_patterns/03_behavioural/04_command.py) | chain of responsibility |
+| 2 | Structural | ✔ [adapter](02_design_patterns/02_structural/01_adapter.md), ✔ [decorator](02_design_patterns/02_structural/02_decorator.md), ✔ [facade](02_design_patterns/02_structural/03_facade.md), ✔ [composite](02_design_patterns/02_structural/04_composite.md) | — |
+| 3 | Behavioural | ✔ [strategy](02_design_patterns/03_behavioural/01_strategy.md), ✔ [observer](02_design_patterns/03_behavioural/02_observer.md), ✔ [state](02_design_patterns/03_behavioural/03_state.md), ✔ [command](02_design_patterns/03_behavioural/04_command.md), ✔ [chain of responsibility](02_design_patterns/03_behavioural/05_chain_of_responsibility.md) | — |
 
 Recognize-only, no code: proxy, template method, iterator, abstract factory.
 
