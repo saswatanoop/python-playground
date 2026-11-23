@@ -108,7 +108,7 @@ For an interview, put `add` on `Folder` only. It's simpler to explain, and the o
 ### Connections
 
 - Polymorphism: one call, a different implementation per node type ([06_polymorphism_inheritance.md](../../01_lld_in_a_hurry/06_polymorphism_inheritance.md)).
-- Decorator also holds an object of its own interface, but exactly one, to add behaviour; a composite holds many, to treat a group as one ([02_decorator.md](02_decorator.md)).
+- Decorator also holds an object of its own interface, but exactly one, to add behaviour; a composite holds many, to treat a group as one ([01_decorator.md](01_decorator.md)).
 - LLD problems: File System; also org charts and nested comments.
 
 ---

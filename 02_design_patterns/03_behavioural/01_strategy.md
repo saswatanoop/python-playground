@@ -207,7 +207,7 @@ They often appear together: a factory creates the strategy, the context uses it.
 ### Connections
 
 - Polymorphism plus composition over inheritance ([06_polymorphism_inheritance.md](../../01_lld_in_a_hurry/06_polymorphism_inheritance.md)); open/closed ([04_solid.md](../../01_lld_in_a_hurry/04_solid.md)).
-- Factory creates the strategy ([02_factory.md](../01_creational/02_factory.md)); Decorator wraps it ([02_decorator.md](../02_structural/02_decorator.md)).
+- Factory creates the strategy ([01_factory.md](../01_creational/01_factory.md)); Decorator wraps it ([01_decorator.md](../02_structural/01_decorator.md)).
 - Strategy vs State: same shape, but a strategy is chosen from outside, while states replace themselves as actions happen ([03_state.md](03_state.md)).
 
 ---

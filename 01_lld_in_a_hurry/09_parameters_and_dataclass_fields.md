@@ -41,7 +41,7 @@ client.retries      # 5
 - **Keyword-only:** everything after the bare `*` must be passed by name. `HttpClient("https://api.example.com", 10)` raises `TypeError: HttpClient.__init__() takes 2 positional arguments but 3 were given`.
 - **Why bother with `*`:** `HttpClient(url, 10, 3)` tells the reader nothing. Named settings read well, and their order can change later without breaking anyone.
 - **Order in the signature:** parameters without defaults come before those with. After the `*`, the order is free, and a keyword-only parameter without a default is required by name.
-- This is what makes Builder rare in Python (see [03_builder.md](../02_design_patterns/01_creational/03_builder.md)).
+- This is what makes Builder rare in Python (see [02_builder.md](../02_design_patterns/01_creational/02_builder.md)).
 
 ### The mutable-default trap
 

@@ -151,8 +151,8 @@ Not just "Facade". Something like: "`ParkingLot` is the entry point that coordin
 ### Connections
 
 - Law of Demeter: callers talk to one friend, `Checkout`, instead of reaching into three ([03_general_principles.md](../../01_lld_in_a_hurry/03_general_principles.md)).
-- Decorator keeps one object's interface and adds behaviour ([02_decorator.md](02_decorator.md)); a facade creates a new, simpler interface over several objects.
-- Facade vs Adapter: an adapter wraps *one* object and converts its interface to the one callers expect; a facade sits over *several* and offers a new, simpler one ([01_adapter.md](01_adapter.md)).
+- Decorator keeps one object's interface and adds behaviour ([01_decorator.md](01_decorator.md)); a facade creates a new, simpler interface over several objects.
+- Facade vs Adapter: an adapter wraps *one* object and converts its interface to the one callers expect; a facade sits over *several* and offers a new, simpler one ([04_adapter.md](04_adapter.md)).
 
 ---
 

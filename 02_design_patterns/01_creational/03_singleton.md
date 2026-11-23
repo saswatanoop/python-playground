@@ -155,7 +155,7 @@ Say yes only when the interviewer explicitly wants one shared instance across th
 
 ### Connections
 
-- Injection over globals: the same answer as in Factory ([02_factory.md](02_factory.md)). Create once, pass in.
+- Injection over globals: the same answer as in Factory ([01_factory.md](01_factory.md)). Create once, pass in.
 - Thread-safe creation is a race condition and a lock (Track 1 concurrency, [02_correctness.py](../../03_concurrency/02_correctness.py)).
 
 ---

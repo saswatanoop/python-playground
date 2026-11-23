@@ -20,7 +20,7 @@ Go through the folders in number order, and the files inside each folder in numb
 - **Notes** (`.md`): starts with a `What this note covers` list, then a `Review points` block, and ends with review questions whose answers are collapsed. Written from my teach-back, in my words.
 - **Keep each note short.** A long Hello Interview page is split into parts of about 150–300 lines, each with its own review points and questions.
 - **Design pattern notes are written as a discussion:** question-led sections, the questions a learner or interviewer would ask next, ending with a `Gotchas` list. The notes in `01_lld_in_a_hurry/` stay in the reference style (crux bullets under topic headings).
-- **Design patterns:** one note per pattern, `<nn>_<name>.md`, with the code inside it as short snippets that run. No separate `.py`. Older patterns are still `.py` files with a long docstring; each is replaced by an `.md` when I study that pattern.
+- **Design patterns:** one note per pattern, `<nn>_<name>.md`, with the code inside it as short snippets that run. No separate `.py`. Within each group, `<nn>` follows interview priority, highest first.
 - **Other code** (`.py`): a docstring at the top with `Review points`, then the smallest example that shows the idea.
 - **LLD problems** (`04_lld_problems/<nn>_<name>/`): `README.md` with requirements → class diagram → patterns used → extensions → review points, plus the code and a short test. Also record **v1 → what broke → v2** (my naive first design, the requirement that broke it, and the refactor) and **where I got stuck**, so the note can later be taught as a video (see "Make every note video-ready" in `../LEARNING.md`).
 
@@ -46,13 +46,13 @@ Goal of this folder: after it, I have every OOP concept and Python language tool
 
 ### 2. Design patterns
 
-Start with ✔ [00_overview.md](02_design_patterns/00_overview.md), the note for the Hello Interview Design Patterns page (which patterns matter and when to use one). Then the patterns below. The code files were written before the Hello Interview pass; when I study a pattern and teach it back, it becomes one `.md` note and the `.py` is deleted. ✔ = note written.
+Start with ✔ [00_overview.md](02_design_patterns/00_overview.md), the note for the Hello Interview Design Patterns page (which patterns matter and when to use one). Then the patterns below. Inside each group, notes are numbered by interview priority: highest first, lowest last. The first patterns in each group are the ones on Hello Interview's page; the rest are a second tier. ✔ = note written.
 
 | # | Group | Done | To add |
 |---|---|---|---|
-| 1 | Creational | ✔ [singleton](02_design_patterns/01_creational/01_singleton.md), ✔ [factory](02_design_patterns/01_creational/02_factory.md), ✔ [builder](02_design_patterns/01_creational/03_builder.md) | — |
-| 2 | Structural | ✔ [adapter](02_design_patterns/02_structural/01_adapter.md), ✔ [decorator](02_design_patterns/02_structural/02_decorator.md), ✔ [facade](02_design_patterns/02_structural/03_facade.md), ✔ [composite](02_design_patterns/02_structural/04_composite.md) | — |
-| 3 | Behavioural | ✔ [strategy](02_design_patterns/03_behavioural/01_strategy.md), ✔ [observer](02_design_patterns/03_behavioural/02_observer.md), ✔ [state](02_design_patterns/03_behavioural/03_state.md), ✔ [command](02_design_patterns/03_behavioural/04_command.md), ✔ [chain of responsibility](02_design_patterns/03_behavioural/05_chain_of_responsibility.md) | — |
+| 1 | Creational | ✔ [factory](02_design_patterns/01_creational/01_factory.md), ✔ [builder](02_design_patterns/01_creational/02_builder.md), ✔ [singleton](02_design_patterns/01_creational/03_singleton.md) | — |
+| 2 | Structural | ✔ [decorator](02_design_patterns/02_structural/01_decorator.md), ✔ [facade](02_design_patterns/02_structural/02_facade.md), ✔ [composite](02_design_patterns/02_structural/03_composite.md), ✔ [adapter](02_design_patterns/02_structural/04_adapter.md) | — |
+| 3 | Behavioural | ✔ [strategy](02_design_patterns/03_behavioural/01_strategy.md), ✔ [observer](02_design_patterns/03_behavioural/02_observer.md), ✔ [state](02_design_patterns/03_behavioural/03_state.md), ✔ [chain of responsibility](02_design_patterns/03_behavioural/04_chain_of_responsibility.md), ✔ [command](02_design_patterns/03_behavioural/05_command.md) | — |
 
 Recognize-only, no code: proxy, template method, iterator, abstract factory.
 

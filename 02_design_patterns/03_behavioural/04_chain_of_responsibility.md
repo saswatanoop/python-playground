@@ -129,7 +129,7 @@ Loop through them and return the first whose limit fits. Use linked handlers whe
 
 ### Connections
 
-- Like Decorator, each link holds the next one and passes calls on. But a decorator always passes on and adds behaviour; a chain handler may stop the request ([02_decorator.md](../02_structural/02_decorator.md)).
+- Like Decorator, each link holds the next one and passes calls on. But a decorator always passes on and adds behaviour; a chain handler may stop the request ([01_decorator.md](../02_structural/01_decorator.md)).
 - Express middleware, logging levels, validation pipelines.
 - LLD problems: ATM, logging service (log levels), support ticket escalation.
 

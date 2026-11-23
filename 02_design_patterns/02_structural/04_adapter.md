@@ -90,7 +90,7 @@ If the mismatch is one function, a small function or a lambda can adapt it. Use 
 
 - Dependency inversion: your code owns the interface, the vendor is plugged in behind it ([04_solid.md](../../01_lld_in_a_hurry/04_solid.md)).
 - Fits with Strategy: each adapter is one interchangeable `PaymentGateway` ([01_strategy.md](../03_behavioural/01_strategy.md)).
-- Facade vs Adapter, in the Facade note ([03_facade.md](03_facade.md)).
+- Facade vs Adapter, in the Facade note ([02_facade.md](02_facade.md)).
 
 ---
 

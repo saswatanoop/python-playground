@@ -28,7 +28,7 @@ No. The Gang of Four book is from 1994, written for C++ and Smalltalk. Since the
 - languages absorbed some patterns: iterators are a built-in, not a pattern;
 - the move from deep inheritance to composition and functions made others obsolete.
 
-Hello Interview's count: you'll be asked about maybe five. The eight on the page matter most; Adapter, Composite, Command and Chain of Responsibility are a second tier, worth knowing for pattern-name questions and a few LLD problems.
+Hello Interview's count: you'll be asked about maybe five. The eight on the page matter most; Composite, Adapter, Chain of Responsibility and Command are a second tier, worth knowing for pattern-name questions and a few LLD problems.
 
 ### "So should I use as many as I can, to show I know them?"
 
@@ -43,8 +43,8 @@ Each group answers a different question:
 | Group | The question | Hello Interview's wording | Patterns |
 |---|---|---|---|
 | **Creational** | *How* does an object get made, and which one? | "control how objects get created"; hide construction details, keep code from being tied to concrete classes | Factory, Builder, Singleton |
-| **Structural** | *How are objects wired together?* Who wraps or holds whom, and what interface the outside sees | "how objects connect to each other" | Decorator, Facade, Adapter, Composite |
-| **Behavioural** | *Who does the work, and how do objects talk?* Which algorithm runs, who hears about a change, what's allowed now | "how objects interact and distribute responsibilities"; "the flow of control" | Strategy, Observer, State, Command, Chain of Responsibility |
+| **Structural** | *How are objects wired together?* Who wraps or holds whom, and what interface the outside sees | "how objects connect to each other" | Decorator, Facade, Composite, Adapter |
+| **Behavioural** | *Who does the work, and how do objects talk?* Which algorithm runs, who hears about a change, what's allowed now | "how objects interact and distribute responsibilities"; "the flow of control" | Strategy, Observer, State, Chain of Responsibility, Command |
 
 ### "Structural and behavioural both use composition. How do I tell them apart?"
 
@@ -68,11 +68,11 @@ Little. Nobody asks "is Observer behavioural?". They ask "which pattern fits her
 
 | Pattern | Use it when | Signal in the requirements | Note |
 |---|---|---|---|
-| Factory | Callers shouldn't care which concrete class gets created, and the choice is made in several places or arrives as data | "different notification types", "multiple payment methods" | [02_factory.md](01_creational/02_factory.md) |
-| Builder | An object has lots of optional fields, rules across fields, or is assembled over several steps | "configurable request", "optional settings" | [03_builder.md](01_creational/03_builder.md) |
-| Singleton | Exactly one shared instance across the system (rare in interviews; usually inject instead) | "one shared config / pool / cache" | [01_singleton.md](01_creational/01_singleton.md) |
-| Decorator | Optional behaviours layered at runtime without a subclass per combination | "optional features", "stack behaviours", "add logging / encryption to some" | [02_decorator.md](02_structural/02_decorator.md) |
-| Facade | Hide internal complexity behind a simple entry point | an orchestrator: `Game`, `ParkingLot`, `Checkout` | [03_facade.md](02_structural/03_facade.md) |
+| Factory | Callers shouldn't care which concrete class gets created, and the choice is made in several places or arrives as data | "different notification types", "multiple payment methods" | [01_factory.md](01_creational/01_factory.md) |
+| Builder | An object has lots of optional fields, rules across fields, or is assembled over several steps | "configurable request", "optional settings" | [02_builder.md](01_creational/02_builder.md) |
+| Singleton | Exactly one shared instance across the system (rare in interviews; usually inject instead) | "one shared config / pool / cache" | [03_singleton.md](01_creational/03_singleton.md) |
+| Decorator | Optional behaviours layered at runtime without a subclass per combination | "optional features", "stack behaviours", "add logging / encryption to some" | [01_decorator.md](02_structural/01_decorator.md) |
+| Facade | Hide internal complexity behind a simple entry point | an orchestrator: `Game`, `ParkingLot`, `Checkout` | [02_facade.md](02_structural/02_facade.md) |
 | Strategy | Replace `if/elif` on type with interchangeable behaviours | "different ways to price / pay / route" | [01_strategy.md](03_behavioural/01_strategy.md) |
 | Observer | Several components react to one event | "notify", "update multiple components" | [02_observer.md](03_behavioural/02_observer.md) |
 | State machine | Behaviour depends on the current state, and transitions get messy | "state", "status", "stage" repeated; vending machine, workflow | [03_state.md](03_behavioural/03_state.md) |
@@ -81,10 +81,10 @@ Not on the Hello Interview page, but worth knowing (especially for pattern-name 
 
 | Pattern | Use it when | Signal in the requirements | Note |
 |---|---|---|---|
-| Adapter | A class you can't change has the wrong interface | "integrate a third-party / legacy API" | [01_adapter.md](02_structural/01_adapter.md) |
-| Composite | Items and groups of items must be treated the same, in a tree | "folders inside folders", "nested", "total over the hierarchy" | [04_composite.md](02_structural/04_composite.md) |
-| Command | Actions must be stored, undone, queued or replayed | "undo/redo", "queue jobs", "macros" | [04_command.md](03_behavioural/04_command.md) |
-| Chain of responsibility | A request passes along handlers until handled, or through each | "escalate", "approval limits", "middleware", "dispense notes" | [05_chain_of_responsibility.md](03_behavioural/05_chain_of_responsibility.md) |
+| Composite | Items and groups of items must be treated the same, in a tree | "folders inside folders", "nested", "total over the hierarchy" | [03_composite.md](02_structural/03_composite.md) |
+| Adapter | A class you can't change has the wrong interface | "integrate a third-party / legacy API" | [04_adapter.md](02_structural/04_adapter.md) |
+| Chain of responsibility | A request passes along handlers until handled, or through each | "escalate", "approval limits", "middleware", "dispense notes" | [04_chain_of_responsibility.md](03_behavioural/04_chain_of_responsibility.md) |
+| Command | Actions must be stored, undone, queued or replayed | "undo/redo", "queue jobs", "macros" | [05_command.md](03_behavioural/05_command.md) |
  Recognize-only, no notes: proxy, template method, iterator, abstract factory.
 
 ### Gotchas
